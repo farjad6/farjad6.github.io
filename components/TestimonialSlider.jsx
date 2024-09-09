@@ -10,25 +10,36 @@ import "swiper/css/pagination";
 const testimonialData = [
   {
     image: "/t-avt-1.png",
-    name: "Anne Smith",
-    position: "Customer",
+    name: "Victor Vatus",
+    position: "Sell Me This Pen",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "It's a pleasure working with Farjad and the rest of his team, they're very thorough and ask themselves business questions on top of being excellent coders. Highly recommended!",
   },
   {
-    image: "/t-avt-2.png",
-    name: "Jane Doe",
-    position: "Customer",
+    image: "/t-avt-2.jpeg",
+    name: "Ammon Collins",
+    position: "GetINCA",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Farjad is amazing. He deserves the highest rating I can give in terms of performance, communication, and efficiency. I've been extremely pleased with his work and would be happy to recommend him to anyone in need of his services. We have had excellent communication, cooperation, and work quality while working with him. Thank you very much Farjad, I wish I could pay you double.",
   },
   {
-    image: "/t-avt-3.png",
-    name: "Jhon Doe",
-    position: "Customer",
+    image: "/t-avt-3.jpeg",
+    name: "Shaun Ek",
+    position: "Hero Bullion",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "Farjad worked with us on a Wordpress/Woocommerce focused project for a little less than a year and he was a pleasure to work with. I can attest that he is flexible and accommodating and he has a strong work ethic.",
   },
+  {
+    image: "/t-avt-4.jpeg",
+    name: "Mehdi Sidoumou",
+    position: "Mijjim",
+    message:
+        "Farjad is Awesome! Great Technical skills, great with programing, PHP, Server Technology, He really went the extra mile to make sure my project was done correctly and without any flaws. I highly recommend his expertise! Will definitely work again with Farjad! I'm very pleased we hired Farjad, and I would work with him again!",
+  },
+
+
+
+
 ];
 
 const TestimonialSlider = () => {
@@ -54,6 +65,7 @@ const TestimonialSlider = () => {
                     width={100}
                     height={100}
                     alt={person.name}
+                    className={"rounded-full"}
                   />
                 </div>
 

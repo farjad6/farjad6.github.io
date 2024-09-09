@@ -1,27 +1,32 @@
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
-
 import { fadeIn } from "../../variants";
 import { useState } from "react";
-
+import emailjs from 'emailjs-com';
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
 
     const myForm = event.target;
     const formData = new FormData(myForm);
+    const formValues = Object.fromEntries(formData.entries());
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => alert("Thank you. I will get back to you ASAP."))
-      .catch((error) => console.log(error))
-      .finally(() => setIsLoading(false));
+    await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID,
+        {
+          name: formValues.name,
+          email: formValues.email,
+          message: formValues.message,
+          subject: formValues.subject,
+        },
+        process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
+    )
+    alert("Thank you. I will get back to you ASAP.");
+    setIsLoading(false);
   };
 
   return (

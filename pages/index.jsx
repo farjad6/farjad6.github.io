@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
 import Avatar from "../components/Avatar";
-
+import {calculateYearsOfExperience} from "../components/helpers"
 import { fadeIn } from "../variants";
 
 const Home = () => {
@@ -32,10 +32,7 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
-            exercitationem harum, quia nulla temporibus deleniti libero veniam
-            vero beatae numquam ducimus illum ab similique ipsam tempore fugit
-            quod laudantium debitis.
+            With over {calculateYearsOfExperience()}+ years of experience in full-stack development and software consulting, I specialize in building innovative and scalable digital solutions. From SaaS platforms to B2B communication tools, I bring ideas to life with a seamless blend of technology and creativity.
           </motion.p>
 
           {/* btn */}

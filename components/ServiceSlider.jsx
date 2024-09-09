@@ -16,28 +16,33 @@ import "swiper/css/pagination";
 const serviceData = [
   {
     Icon: RxCrop,
-    title: "Branding",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Full-Stack Web Development",
+    description: "Specializing in building responsive, scalable web applications using the latest technologies.",
   },
   {
     Icon: RxPencil2,
-    title: "Design",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Mobile App Development",
+    description: "Developing feature-rich and intuitive mobile applications with React Native, tailored to your business needs.",
   },
   {
     Icon: RxDesktop,
-    title: "Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Consulting & Strategy",
+    description: "Providing expert technical consulting and strategic guidance to turn your ideas into successful projects.",
   },
   {
     Icon: RxReader,
-    title: "Copywriting",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "B2B SaaS Solutions",
+    description: "Developing robust SaaS platforms to optimize business processes and drive growth.",
   },
   {
     Icon: RxRocket,
-    title: "SEO",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "E-commerce Development",
+    description: "Customizing e-commerce platforms like WooCommerce for a seamless online shopping experience.",
+  },
+  {
+    Icon: RxPencil2,
+    title: "API & Third-Party Integrations",
+    description: "Integrating third-party services like Twilio, QuickBooks, and ShipHero to enhance your digital solutions.",
   },
 ];
 
@@ -63,7 +68,7 @@ const ServiceSlider = () => {
     >
       {serviceData.map((item, i) => (
         <SwiperSlide key={i}>
-          <div className="bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300">
+          <div className="bg-[rgba(65,47,123,0.15)] h-72 rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300">
             {/* icon */}
             <div className="text-4xl text-accent mb-4">
               <item.Icon aria-hidden />
@@ -76,12 +81,12 @@ const ServiceSlider = () => {
             </div>
 
             {/* arrow */}
-            <div className="text-3xl">
-              <RxArrowTopRight
-                className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300"
-                aria-hidden
-              />
-            </div>
+            {/*<div className="text-3xl">*/}
+            {/*  <RxArrowTopRight*/}
+            {/*    className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300"*/}
+            {/*    aria-hidden*/}
+            {/*  />*/}
+            {/*</div>*/}
           </div>
         </SwiperSlide>
       ))}

@@ -4,6 +4,8 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import TopLeftImg from "../components/TopLeftImg";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import {calculateYearsOfExperience} from "./helpers";
 
 // setup font
 const sora = Sora({
@@ -19,16 +21,17 @@ const Layout = ({ children }) => {
     >
       {/* metadata */}
       <Head>
-        <title>Ethan Smith | Portfolio</title>
+        <title>{process.env.NEXT_PUBLIC_AUTHOR_NAME} | Portfolio</title>
         <meta
           name="description"
-          content="Ethan Smith is a Full-stack web developer with 10+ years of experience."
+          content={`${process.env.NEXT_PUBLIC_AUTHOR_NAME} is a Full-stack web developer with ${calculateYearsOfExperience()}+ years of experience.`}
         />
+        {/*TODO: update keywords from config or env*/}
         <meta
           name="keywords"
           content="react, next, nextjs, html, css, javascript, js, modern-ui, modern-ux, portfolio, framer-motion, 3d-website, particle-effect"
         />
-        <meta name="author" content="Sanidhya Kumar Verma" />
+        <meta name="author" content={process.env.NEXT_PUBLIC_AUTHOR_NAME} />
         <meta name="theme-color" content="#f13024" />
       </Head>
 

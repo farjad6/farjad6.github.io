@@ -9,35 +9,36 @@ import {
   RiPinterestLine,
 } from "react-icons/ri";
 
+// TODO: update links here
 export const socialData = [
-  {
-    name: "YouTube",
-    link: "https://youtube.com",
-    Icon: RiYoutubeLine,
-  },
+  // {
+  //   name: "YouTube",
+  //   link: "https://youtube.com",
+  //   Icon: RiYoutubeLine,
+  // },
   {
     name: "Instagram",
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/farjad.ahmad6",
     Icon: RiInstagramLine,
   },
   {
     name: "Facebook",
-    link: "https://facebook.com",
+    link: "https://www.facebook.com/farjad.ahmad.7",
     Icon: RiFacebookLine,
   },
-  {
-    name: "Dribbble",
-    link: "https://dribbble.com",
-    Icon: RiDribbbleLine,
-  },
-  {
-    name: "Pinterest",
-    link: "https://pinterest.com",
-    Icon: RiPinterestLine,
-  },
+  // {
+  //   name: "Dribbble",
+  //   link: "https://dribbble.com",
+  //   Icon: RiDribbbleLine,
+  // },
+  // {
+  //   name: "Pinterest",
+  //   link: "https://pinterest.com",
+  //   Icon: RiPinterestLine,
+  // },
   {
     name: "Github",
-    link: "https://github.com/sanidhyy/modern-portfolio",
+    link: "https://github.com/farjad6",
     Icon: RiGithubLine,
   },
 ];

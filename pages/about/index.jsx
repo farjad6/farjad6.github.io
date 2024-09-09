@@ -8,6 +8,8 @@ import {
   FaJs,
   FaReact,
   FaWordpress,
+  FaApple,
+  FaAndroid
 } from "react-icons/fa";
 import {
   SiAdobephotoshop,
@@ -19,6 +21,8 @@ import {
 import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
+import {calculateYearsOfExperience} from "../../components/helpers";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 //  data
 export const aboutData = [
@@ -38,38 +42,50 @@ export const aboutData = [
         ],
       },
       {
+        title: "Mobile App Development",
+        icons: [
+          FaReact,
+          FaAndroid,
+          FaApple
+        ],
+      },
+      {
         title: "UI/UX Design",
         icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
       },
     ],
   },
-  {
-    title: "awards",
-    info: [
-      {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
-      },
-      {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
-      },
-    ],
-  },
+  // {
+  //   title: "awards",
+  //   info: [
+  //     {
+  //       title: "Webby Awards - Honoree",
+  //       stage: "2011 - 2012",
+  //     },
+  //     {
+  //       title: "Adobe Design Achievement Awards - Finalist",
+  //       stage: "2009 - 2010",
+  //     },
+  //   ],
+  // },
   {
     title: "experience",
     info: [
       {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
+        title: "Software Architect - Samodrei LLC",
+        stage: "2022 - current",
       },
       {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
+        title: "Software Developer - Hero Bullion",
+        stage: "2023 - current",
       },
       {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
+        title: "Software Developer - GetINCA LLC",
+        stage: "2019 - current",
+      },
+      {
+        title: "Associate Developer - Persephone Technologies",
+        stage: "2017 - 2019",
       },
     ],
   },
@@ -77,16 +93,16 @@ export const aboutData = [
     title: "credentials",
     info: [
       {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
+        title: "Computer Engineering - Lancaster University, Lancaster, UK",
+        stage: "2013",
       },
       {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
+        title: "Android Development - APTECH Institute, LAHORE, PK",
+        stage: "2016",
       },
       {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
+        title: "Certified SugarCRM Developer - SugarCRM, California, US",
+        stage: "2020",
       },
     ],
   },
@@ -120,8 +136,7 @@ const About = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            Crafting Exceptional <span className="text-accent">Digital</span> Experiences from Vision to Reality.
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
@@ -129,9 +144,7 @@ const About = () => {
             animate="show"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I begin freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
+            {calculateYearsOfExperience()} years ago, I began my journey as a full-stack developer. Since then, I’ve built SaaS platforms, consulted for startups, led B2B projects, and collaborated on innovative digital solutions for businesses and consumers alike.
           </motion.p>
 
           {/* counters */}
@@ -145,7 +158,7 @@ const About = () => {
               {/* experience */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
+                  <CountUp start={0} end={calculateYearsOfExperience()} duration={5} />
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Years of experience.
@@ -155,7 +168,7 @@ const About = () => {
               {/* clients */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} />
+                  <CountUp start={0} end={process.env.NEXT_PUBLIC_AUTHOR_SATISFIED_CLIENTS} duration={5} />
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Satisfied clients.
@@ -165,7 +178,7 @@ const About = () => {
               {/* projects */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} />
+                  <CountUp start={0} end={process.env.NEXT_PUBLIC_AUTHOR_FINISHED_PROJECTS} duration={5} />
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Finished projects.
@@ -173,14 +186,14 @@ const About = () => {
               </div>
 
               {/* awards */}
-              <div className="relative flex-1">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards.
-                </div>
-              </div>
+              {/*<div className="relative flex-1">*/}
+              {/*  <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">*/}
+              {/*    <CountUp start={0} end={8} duration={5} />*/}
+              {/*  </div>*/}
+              {/*  <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">*/}
+              {/*    Winning awards.*/}
+              {/*  </div>*/}
+              {/*</div>*/}
             </div>
           </motion.div>
         </div>
