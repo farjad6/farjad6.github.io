@@ -136,7 +136,7 @@ const About = () => {
             exit="hidden"
             className="h2"
           >
-            Crafting <span className="text-accent">Digital</span> Experiences from Vision to Reality.
+            Turning <span className="text-accent">Vision</span> into Digital Reality.
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
