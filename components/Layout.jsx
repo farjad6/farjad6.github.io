@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
     >
       {/* metadata */}
       <Head>
-        <title>{process.env.NEXT_PUBLIC_AUTHOR_NAME} | Portfolio</title>
+        <title>{process.env.NEXT_PUBLIC_AUTHOR_NAME}</title>
         <meta
           name="description"
           content={`${process.env.NEXT_PUBLIC_AUTHOR_NAME} is a Full-stack web developer with ${calculateYearsOfExperience()}+ years of experience.`}
